@@ -1,0 +1,24 @@
+{
+    "schema":  1,
+    "upstream_url":  "https://git.sr.ht/~sircmpwn/harec",
+    "ref":  "master",
+    "commit":  "c2567f15561488d4151e57ff804bd2e7acbf4b4c",
+    "artifact":  "build/v/c2567f155614-95c00975/compiled/bin/harec.exe",
+    "audit_report":  "build/v/c2567f155614-95c00975/compiled/audit/REPORT.md",
+    "audit_patch":  "build/v/c2567f155614-95c00975/compiled/audit/upstream-to-windows.patch",
+    "audit_manifest":  "build/v/c2567f155614-95c00975/compiled/audit/changes.json",
+    "audit_patch_sha256":  "da022febdc9f9788142fa189bf9bb41c975764f2444102ed10d4b3783e99a44b",
+    "tested_utc":  "2026-10-14T13:02:48.7441755Z",
+    "gcc_target":  "x86_64-w64-mingw32",
+    "qbe_sha256":  "bbef30399d2089bd7524d3bc0ca022b90c40e3976c8cce8d9f56e3c2bff86510",
+    "gcc_sha256":  "b5c068f18dfb83289c77ddf70a575b8fb8e0e83a5293324d6c52988cd62b709e",
+    "inputs_sha256":  "dbc7f9a902ef0209ba9ae489f552db963efd1cd42a2fd5c64ecc4042eebda27e",
+    "harec_sha256":  "ac9cc9d35aec3cf1ef5e36bae81522022881b93a49569637b45ca02eab68d6cc",
+    "tests":  [
+                  "compat-smoke",
+                  "harec-version",
+                  "hare-qbe-ir",
+                  "hare-qbe-win64-athena3-telemetry",
+                  "qbe-win64-f32-f64-arg5-assembly"
+              ]
+}

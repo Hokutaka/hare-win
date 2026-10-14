@@ -1,0 +1,7 @@
+# Cerune Issue #92に基づくQBE Win64 ABI回帰ケース。
+# 第5引数f32が整数レジスタにloweringされないことをアセンブルで確認。
+export function w $check(l %a, l %b, l %c, l %d, s %value) {
+@start
+    %ok =w ceqs %value, s_1.5
+    ret %ok
+}

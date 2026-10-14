@@ -1,0 +1,6 @@
+# Cerune Issue #92: 第5引数f64でもWin64のstack parameter classを確認。
+export function w $checkd(l %a, l %b, l %c, l %d, d %value) {
+@start
+    %ok =w ceqd %value, d_2.5
+    ret %ok
+}

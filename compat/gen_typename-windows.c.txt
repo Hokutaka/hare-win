@@ -1,0 +1,31 @@
+char *
+gen_typename(const struct type *type)
+{
+    /* Use a temporary file instead of open_memstream on Windows. */
+    FILE *f = tmpfile();
+    if (!f) {
+        xfprintf(stderr, "Unable to open temporary type stream: %s\n", strerror(errno));
+        exit(EXIT_ABNORMAL);
+    }
+    emit_type(type, f);
+    if (fflush(f) != 0) {
+        fclose(f);
+        xfprintf(stderr, "Unable to flush temporary type stream\n");
+        exit(EXIT_ABNORMAL);
+    }
+    long end = ftell(f);
+    if (end < 0 || fseek(f, 0, SEEK_SET) != 0) {
+        fclose(f);
+        xfprintf(stderr, "Unable to rewind temporary type stream\n");
+        exit(EXIT_ABNORMAL);
+    }
+    char *ptr = xcalloc((size_t)end + 1, 1);
+    if ((size_t)end != fread(ptr, 1, (size_t)end, f)) {
+        fclose(f);
+        free(ptr);
+        xfprintf(stderr, "Unable to read temporary type stream\n");
+        exit(EXIT_ABNORMAL);
+    }
+    fclose(f);
+    return ptr;
+}

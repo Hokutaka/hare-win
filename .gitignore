@@ -1,0 +1,9 @@
+/vendor/
+/build/
+upstream.lock.json.bak-*
+upstream.lock.json.tmp-*
+*.exe
+*.obj
+*.log
+*.tmp
+*.o
