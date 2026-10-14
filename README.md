@@ -15,3 +15,7 @@ Hareコンパイラ（`harec`）をWindows上でビルドする非公式プロ�
 
 - [Hare](https://harelang.org/)
 - [harec](https://git.sr.ht/~sircmpwn/harec)
+
+## ライセンス
+
+GPL-3.0-only。公式harecのライセンスに従います。
